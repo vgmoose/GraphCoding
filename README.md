@@ -22,9 +22,9 @@ setColor(colorString)
 ## Examples
 Paste any one or combination of these examples in the textbox and hit "go" to see the graph be drawn.
 ```JavaScript
-// setup the window bounds
-var xMin = -10; var xMax = 10;
-var yMin = -10; var yMax = 10;
+// set the window to the first quadrant
+var xMin = 0; var xMax = 20;
+var yMin = 0; var yMax = 20;
 setWindow(xMin, xMax, yMin, yMax);
 ```
 
@@ -74,7 +74,7 @@ while (y < yMax)
 ```JavaScript
 // plot x=-0.4y in orange
 setColor("orange")
-while (var y=yMin; y < yMax; y+=0.5)
+for (var y=yMin; y < yMax; y+=0.5)
 {
     var x = -y*0.4;
     plot(x, y);
