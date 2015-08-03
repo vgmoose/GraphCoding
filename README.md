@@ -1,5 +1,5 @@
 # GraphCoding
-An introduction to basic coding concepts (loops, conditionals, arrays) using mathematical graphs. Play with it and learn [here](http://vgmoose.github.io/GraphCoding)
+An introduction to basic coding concepts (loops, conditionals, arrays) using mathematical graphs. Play with it and learn at the website [here](http://vgmoose.github.io/GraphCoding).
 
 ![Image](http://i.imgur.com/0mhmsLJ.png)
 
@@ -21,6 +21,12 @@ setColor(colorString)
 
 ## Examples
 Paste any one or combination of these examples in the textbox and hit "go" to see the graph be drawn.
+
+```JavaScript
+// plot a point at (5,5)
+plot(5, 5);
+```
+
 ```JavaScript
 // set the window to the first quadrant
 var xMin = 0; var xMax = 20;
@@ -78,5 +84,35 @@ for (var y=yMin; y < yMax; y+=0.5)
 {
     var x = -y*0.4;
     plot(x, y);
+}
+```
+```JavaScript
+// plot 100 random points within the window
+var width = xMax - xMin;
+var height = yMax - yMin;
+
+for (var i=0; i<100; i++)
+{
+    // Math.random() is a random number between 0 and 1
+	var x = xMin + Math.random()*width;    
+	var y = yMin + Math.random()*height;
+	plot(x, y);
+}
+```
+
+
+```JavaScript
+var width = xMax - xMin;
+var height = yMax - yMin;
+var colors = ["red", "blue", "green", "yellow", "pink", "purple", "orange", "#c2c2c2"];
+// plot 150 random points within the window of random colors
+for (var i=0; i<150; i++)
+{
+	var choice = Math.floor( Math.random()*colors.length );
+	setColor(colors[choice]);
+	
+	var x = xMin + Math.random()*width;    
+	var y = yMin + Math.random()*height;
+	plot(x, y);
 }
 ```

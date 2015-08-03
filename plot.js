@@ -6,7 +6,7 @@ var xOffset, yOffset;
 function init() {
 canvas = document.getElementById("graph");
 context = canvas.getContext("2d");
-
+go();
 }
 
 function plot(x, y)
@@ -46,7 +46,6 @@ function setWindow(x1, x2, y1, y2)
     for (var y=yMin; y<=yMax; y+= stepY)
         context.fillText(parseInt(canvas.height/yScale - 2*yOffset/yScale - y), 0, y*yScale+yOffset);
         
-//    for (var y=yMin; y<yMax; y++)
 }
 
 
