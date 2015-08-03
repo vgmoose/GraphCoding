@@ -1,5 +1,5 @@
 var cavnas, context;
-var xMin, xMax, yMin, yMax;
+var xMin=-10, xMax=10, yMin=-10, yMax=10;
 var xScale, yScale;
 var xOffset, yOffset;
 
@@ -18,6 +18,7 @@ function plot(x, y)
 function go()
 {
     context.clearRect(0, 0, canvas.width, canvas.height);
+    setWindow(xMin, xMax, yMin, yMax);
     var code = document.getElementById("code").value;
     eval(code);
 }

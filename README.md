@@ -1,5 +1,5 @@
 # GraphCoding
-An introduction to basic coding concepts (loops, conditionals, arrays) using mathematical graphs
+An introduction to basic coding concepts (loops, conditionals, arrays) using mathematical graphs. Play with it and learn [here](http://vgmoose.github.io/GraphCoding)
 
 ## Syntax
 #### Plotting a point on the graph
