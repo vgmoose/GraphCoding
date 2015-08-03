@@ -102,10 +102,11 @@ for (var i=0; i<100; i++)
 
 
 ```JavaScript
+// plot 150 random points within the window of random colors
 var width = xMax - xMin;
 var height = yMax - yMin;
 var colors = ["red", "blue", "green", "yellow", "pink", "purple", "orange", "#c2c2c2"];
-// plot 150 random points within the window of random colors
+
 for (var i=0; i<150; i++)
 {
 	var choice = Math.floor( Math.random()*colors.length );
