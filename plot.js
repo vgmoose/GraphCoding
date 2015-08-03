@@ -44,7 +44,7 @@ function setWindow(x1, x2, y1, y2)
         context.fillText(parseInt(x), x*xScale+xOffset, canvas.height);
     
     for (var y=yMin; y<=yMax; y+= stepY)
-        context.fillText(parseInt(canvas.height/yScale - 2*yOffset/yScale - y), 0, y*yScale+yOffset);
+        context.fillText(parseInt(yMax-y+yMin), 0, y*yScale+yOffset);
         
 }
 
