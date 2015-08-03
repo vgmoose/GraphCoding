@@ -102,12 +102,12 @@ for (var i=0; i<100; i++)
 
 
 ```JavaScript
-// plot 150 random points within the window of random colors
+// plot 1500 random points within the window of random colors
 var width = xMax - xMin;
 var height = yMax - yMin;
 var colors = ["red", "blue", "green", "yellow", "pink", "purple", "orange", "#c2c2c2"];
 
-for (var i=0; i<150; i++)
+for (var i=0; i<1500; i++)
 {
 	var choice = Math.floor( Math.random()*colors.length );
 	setColor(colors[choice]);
@@ -116,4 +116,18 @@ for (var i=0; i<150; i++)
 	var y = yMin + Math.random()*height;
 	plot(x, y);
 }
+```
+
+```JavaScript
+// create a function for drawing parabolas with a given offset
+function drawParabola(color, offset)
+{
+    setColor(color);
+    for (var x=xMin; x<xMax; x+=0.1)
+        plot(x, x*x+offset);
+}
+
+drawParabola("red", 2);
+drawParabola("blue", 3);
+drawParabola("yellow", 4);
 ```
