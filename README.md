@@ -131,3 +131,25 @@ drawParabola("red", 2);
 drawParabola("blue", 3);
 drawParabola("yellow", 4);
 ```
+
+```JavaScript
+// plot a bell curve
+var xMin = -5; var xMax = 5;
+var yMin = 0; var yMax = 1;
+setWindow(xMin, xMax, yMin, yMax);
+
+setColor("red");
+function gaussian(x) {
+	var gaussianConstant = 1 / Math.sqrt(2 * Math.PI),
+		mean = 0,
+    	sigma = 1;
+
+    x = (x - mean) / sigma;
+    return gaussianConstant * Math.exp(-.5 * x * x) / sigma;
+};
+
+for (var x=xMin; x<xMax; x+=0.1)
+{
+    plot(x, gaussian(x));
+}
+```
