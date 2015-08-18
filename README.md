@@ -153,3 +153,35 @@ for (var x=xMin; x<xMax; x+=0.1)
     plot(x, gaussian(x));
 }
 ```
+
+```JavaScript
+// draw the USA flag
+
+// draw the 7 red stripes
+setColor("red")
+for (var y=3; y>-4; y--)
+{
+    for (var x=-7; x<7; x+=0.25)
+    {
+        plot(x, y);
+        plot(x, y+0.25);
+    }
+}
+
+// draw the big blue square
+setColor("blue")
+for (var y=3; y>-1; y-=0.25)
+{
+    for (var x=-7; x<-1; x+=0.25)
+    {
+        plot(x, y);
+        plot(x, y+0.25);
+    }
+}
+
+// draw a bunch of dots
+setColor("white")
+for (var y=3; y>-1; y-=.5)
+    for (var x=-7; x<-1; x+=.5)
+        plot(x, y);
+```
