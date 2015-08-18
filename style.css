@@ -13,3 +13,9 @@ canvas {
 .center {
     text-align: center;
 }
+
+#errors {
+	width: 500px;
+	display: inline-block;
+	color: red;
+}

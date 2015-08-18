@@ -7,6 +7,33 @@ function init() {
 canvas = document.getElementById("graph");
 context = canvas.getContext("2d");
 go();
+
+window.onerror = function(msg, url, linenumber) {
+	document.getElementById("errors").innerHTML = linenumber+": "+msg;
+    return true;
+}
+
+window.addEventListener('hashchange', function() {
+	loadFromURL();
+}, false);
+
+if (location.hash != "" && location.hash != "#")
+	loadFromURL();
+
+}
+
+function loadFromURL()
+{
+	var content = atob(window.location.hash.substr(1));
+	document.getElementById("code").value = content;
+	go();
+}
+
+function setToURL()
+{
+	var url = btoa(document.getElementById("code").value);
+	window.location.hash = "";
+	window.location.hash = url;
 }
 
 function plot(x, y)
@@ -17,7 +44,8 @@ function plot(x, y)
 
 function go()
 {
-    context.clearRect(0, 0, canvas.width, canvas.height);
+	document.getElementById("errors").innerHTML = "";
+	context.clearRect(0, 0, canvas.width, canvas.height);
     setWindow(xMin, xMax, yMin, yMax);
     var code = document.getElementById("code").value;
     eval(code);
