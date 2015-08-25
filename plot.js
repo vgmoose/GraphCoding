@@ -44,6 +44,17 @@ function plot(x, y)
     context.fillRect(x*xScale-2+xOffset, y*yScale-2, 4, 4);
 }
 
+function drawText(text, x, y)
+{
+    y = yMax - y; // to start at bottom left instead of top left
+    context.fillText(text, x*xScale-2+xOffset, y*yScale-2);
+}
+
+function setFontSize(size)
+{
+    context.font = size+"px sans-serif";
+}
+
 function go()
 {
 	document.getElementById("errors").innerHTML = "";
@@ -56,6 +67,7 @@ function go()
 function setWindow(x1, x2, y1, y2)
 {
     setColor("black");
+    setFontSize(10);
     
     xMin = x1;
     xMax = x2;

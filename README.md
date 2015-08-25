@@ -19,6 +19,17 @@ setWindow(xMin, xMax, yMin, yMax);
 setColor(colorString)
 ```
 
+#### Draw the specified string at the given coordinates
+```JavaScript
+drawText(string, x, y)
+```
+
+#### Set the font size of the next drawText command
+```JavaScript
+setFontSize(newSize)
+```
+
+
 ## Examples
 Paste any one or combination of these examples in the textbox and hit "go" to see the graph be drawn.
 
@@ -184,4 +195,32 @@ setColor("white")
 for (var y=3; y>-1; y-=.5)
     for (var x=-7; x<-1; x+=.5)
         plot(x, y);
+```
+
+```JavaScript
+// set the font and draw these words
+setFontSize(17);
+drawText("hello", -5, 8);
+drawText("these are some words", -4, 6);
+drawText("neat", -3, 4);
+
+// set a variable
+var bigText = "COOL!";
+
+// draw that variable twice near eachother
+setFontSize(40);
+setColor("blue");
+drawText(bigText, -5, -1);
+setColor("red");
+drawText(bigText, -5.2, -1.2);
+
+// draw sine and cosine waves
+setColor("green")
+for (var x=xMin; x<xMax; x+=0.2)
+{
+  setColor("green")
+  plot(x+1, Math.sin(x) - 5);
+  setColor("purple")
+  plot(x, Math.cos(x) - 5);
+}
 ```
