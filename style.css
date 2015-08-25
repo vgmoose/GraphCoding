@@ -15,3 +15,15 @@ canvas {
 .center {
     text-align: center;
 }
+
+#errors {
+	width: 500px;
+	display: inline-block;
+	color: red;
+    font-family: sans-serif;
+}
+
+.line-error {
+    background: #FBC2C4 !important;
+    color: #8a1f11 !important;
+}
