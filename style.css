@@ -1,9 +1,11 @@
-textarea {
+textarea, .CodeMirror {
     border:1px solid #999999;
     font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
     height: 200px;
     width: 500px;
     border: 1px solid black;
+    text-align: left;
+    margin: 0 auto;
 }
 
 canvas {

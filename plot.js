@@ -4,9 +4,10 @@ var xScale, yScale;
 var xOffset, yOffset;
 
 function init() {
-canvas = document.getElementById("graph");
-context = canvas.getContext("2d");
-
+    canvas = document.getElementById("graph");
+    context = canvas.getContext("2d");
+    loadCodeMirror();
+    go()
 }
 
 function plot(x, y)
@@ -19,7 +20,7 @@ function go()
 {
     context.clearRect(0, 0, canvas.width, canvas.height);
     setWindow(xMin, xMax, yMin, yMax);
-    var code = document.getElementById("code").value;
+    var code = editor.getValue();
     eval(code);
 }
 
@@ -53,4 +54,15 @@ function setWindow(x1, x2, y1, y2)
 function setColor(c)
 {
     context.fillStyle = c;
+}
+
+function loadCodeMirror()
+{
+    // give the text area syntax highlighting and text editing
+    window.editor = CodeMirror.fromTextArea(code, {
+                    mode: "javascript",
+                    lineNumbers: true,
+                    lineWrapping: true,
+                });
+    
 }

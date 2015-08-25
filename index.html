@@ -1,5 +1,8 @@
 <head>
     <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="lib/codemirror.js"></script>
+    <script src="mode/javascript/javascript.js"></script>
     <script src="plot.js"></script>
     <title>Graph Code Visualizer</title>
 </head>
@@ -9,7 +12,7 @@
         <canvas width=300 height=300 id="graph"></canvas>
         <br></br>
         <textarea id="code" placeholder="// Enter graphing code in here or choose from one of the pre-made samples below"></textarea>
-    <br></br>
+    <br>
         <button onclick="go()">Run</button>
     </div>
 </body>
