@@ -1,20 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="style.css"></link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="lib/codemirror.css">
     <script src="lib/codemirror.js"></script>
     <script src="mode/javascript/javascript.js"></script>
+    <script src="examples.js"></script>
     <script src="plot.js"></script>
-    <title>Graph Code Visualizer</title>
+    <title>GraphCoding - Visual JavaScript Learning</title>
 </head>
 
 <body onload="init()">
-    <div class="center">
-        <canvas width=300 height=300 id="graph"></canvas>
-        <br></br>
-        <textarea id="code"></textarea>
-		<br>
-        <button onclick="setToURL()">Run</button>
-		<br></br>
-		<div id="errors"></div>
-    </div>
+    <header>
+        <h1>GraphCoding</h1>
+        <p class="subtitle">Learn JavaScript logic through interactive mathematical graphs</p>
+    </header>
+
+    <main class="main-container">
+        <section class="visualizer-section">
+            <canvas width="500" height="500" id="graph"></canvas>
+        </section>
+
+        <section class="editor-section">
+            <textarea id="code"></textarea>
+            <div class="controls">
+                <button onclick="setToURL()">Run Script</button>
+                <button class="secondary" onclick="clearEditor()">Clear</button>
+                <button class="secondary" onclick="share()">Share</button>
+            </div>
+            <div id="errors"></div>
+        </section>
+
+        <section class="examples-section">
+            <h2>Example Code</h2>
+            <p class="subtitle">Select an example to load it into the editor</p>
+            <div id="examples-grid" class="examples-grid">
+                <!-- examples populated from examples.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Source code available on <a href="https://github.com/vgmoose/GraphCoding" target="_blank">GitHub</a>.
+            Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.
+        </p>
+        <p>Made by <a href="https://vgmoose.dev" target="_blank">vgmoose</a></p>
+    </footer>
 </body>
+
+</html>
